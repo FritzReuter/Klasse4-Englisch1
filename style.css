@@ -23,7 +23,7 @@
     .container {
       max-width: 600px;
       margin: auto;
-      background: transparent;
+      background: #9bc8d1;
       padding: 2em;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
