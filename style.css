@@ -237,6 +237,10 @@
       margin: 2em auto 0;
     }
 
+    #bottomActions {
+      margin-top: 0;
+    }
+
     .bottom-actions .view-toggle-wrap {
       margin: 0;
     }
