@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Englisch lernen</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container" id="formView">
+
+    <h1>Englisch</h1>
+
+
+    <!-- Wörter / Sätze -->
+
+    <div class="mode-group" id="modeGroup">
+
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          value="words"
+          checked
+          onchange="changeMode()"
+        >
+        Wörter
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          value="sentences"
+          onchange="changeMode()"
+        >
+        Sätze
+      </label>
+
+    </div>
+
+
+
+    <!-- Themenauswahl -->
+
+    <div class="radio-group">
+
+      <select
+        id="topicSelect"
+        class="topic-select"
+        onchange="changeTopic()"
+      >
+        <option value="all">Alles</option>
+        <option value="adjektive">Adjektive</option>
+        <option value="allgemein">Allgemein</option>
+        <option value="alter">Alter</option>
+        <option value="begruessung">Begrüßung</option>
+        <option value="bewegung">Bewegung</option>
+        <option value="farben">Farben</option>
+        <option value="gegenstaende">Gegenstände</option>
+        <option value="jahreszeiten">Jahreszeiten</option>
+        <option value="koerper">Körper</option>
+        <option value="monate">Monate</option>
+        <option value="nahrung">Nahrung</option>
+        <option value="natur">Natur</option>
+        <option value="praepositionen">Präpositionen</option>
+        <option value="schule">Schule</option>
+        <option value="stadt">Stadt</option>
+        <option value="tiere">Tiere</option>
+        <option value="wetter">Wetter</option>
+        <option value="wochentage">Wochentage</option>
+        <option value="zahlen">Zahlen</option>
+      </select>
+
+
+      <!-- Alles: Sprache zufällig wählen -->
+
+      <div id="allOptions" class="all-options">
+
+        <label>
+          <input
+            type="checkbox"
+            id="randomEnglish"
+            checked
+            onchange="resetAllRandom()"
+          >
+          🇬🇧 Englisch
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            id="randomGerman"
+            checked
+            onchange="resetAllRandom()"
+          >
+          🇩🇪 Deutsch
+        </label>
+
+      </div>
+
+    </div>
+
+   <!-- Nicht Alles: Übersetzungsrichtung -->
+
+    <div class="radio-group" id="directionGroup">
+
+      <label>
+        <input
+          type="radio"
+          name="direction"
+          value="en-de"
+          checked
+          onchange="resetUI()"
+        >
+        🇬🇧 Englisch → Deutsch
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="direction"
+          value="de-en"
+          onchange="resetUI()"
+        >
+        🇩🇪 Deutsch → Englisch
+      </label>
+
+    </div>
+
+    
+    <div
+      class="song-text"
+      id="songText"
+    >
+      Lade Inhalt...
+    </div>
+
+
+    <div
+      class="feedback"
+      id="feedbackArea"
+    ></div>
+
+
+    <div>
+
+      <button
+        class="back-btn"
+        onclick="prevWord()"
+      >
+        ⬅️ Zurück
+      </button>
+
+      <button
+        class="check-btn"
+        onclick="checkTranslation()"
+      >
+        Übersetzung anzeigen
+      </button>
+
+      <button
+        class="next-btn"
+        onclick="nextWord()"
+      >
+        Nächster ➡️
+      </button>
+
+    </div>
+
+    <p class="speak-hint">
+      Lies die Wörter vor und sprich die Übersetzung laut aus.
+    </p>
+
+  </div>
+
+
+<!-- Seite Tabelle -->
+
+<div class="table-view" id="tableView">
+
+  <!-- Navigation oben -->
+  <div class="bottom-actions top-toggle">
+
+    <button class="settings-btn"
+            onclick="showSettings()"
+            aria-label="Einstellungen"
+            title="Einstellungen">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.2 7.2 0 0 0-1.62-.94L14.38 2.8a.49.49 0 0 0-.49-.4h-3.84a.49.49 0 0 0-.49.4l-.36 2.52c-.58.24-1.12.56-1.62.94L5.19 5.3a.5.5 0 0 0-.61.22L2.66 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.31-.08.65-.08.94s.03.63.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.52c.04.24.24.4.49.4h3.84c.25 0 .45-.16.49-.4l.36-2.52c.58-.24 1.12-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.02-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+      </svg>
+    </button>
+
+    <button class="view-toggle-btn"
+            onclick="showFormView()"
+            aria-label="Startseite"
+            title="Startseite">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Z"/>
+      </svg>
+    </button>
+
+    <button class="share-btn"
+            onclick="showQrCode()"
+            aria-label="Teilen"
+            title="Teilen">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.2 3.2 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5c0 .23.03.45.08.66L8.03 9.77a3 3 0 1 0 0 4.46l7.12 4.16c-.05.2-.08.41-.08.61A2.93 2.93 0 1 0 18 16.08Z"/>
+      </svg>
+    </button>
+
+  </div>
+
+
+  <!-- Tabelle -->
+  <table class="overview-table" id="overviewTable"></table>
+
+
+  <!-- Navigation unten -->
+  <div class="bottom-actions">
+
+    <button class="settings-btn"
+            onclick="showSettings()"
+            aria-label="Einstellungen"
+            title="Einstellungen">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.2 7.2 0 0 0-1.62-.94L14.38 2.8a.49.49 0 0 0-.49-.4h-3.84a.49.49 0 0 0-.49.4l-.36 2.52c-.58.24-1.12.56-1.62.94L5.19 5.3a.5.5 0 0 0-.61.22L2.66 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.31-.08.65-.08.94s.03.63.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.52c.04.24.24.4.49.4h3.84c.25 0 .45-.16.49-.4l.36-2.52c.58-.24 1.12-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.02-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+      </svg>
+    </button>
+
+    <button class="view-toggle-btn"
+            onclick="showFormView()"
+            aria-label="Startseite"
+            title="Startseite">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Z"/>
+      </svg>
+    </button>
+
+    <button class="share-btn"
+            onclick="showQrCode()"
+            aria-label="Teilen"
+            title="Teilen">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.2 3.2 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5c0 .23.03.45.08.66L8.03 9.77a3 3 0 1 0 0 4.46l7.12 4.16c-.05.2-.08.41-.08.61A2.93 2.93 0 1 0 18 16.08Z"/>
+      </svg>
+    </button>
+
+  </div>
+
+</div>
+
+
+  <!-- 3 Bottons  -->
+
+  <div class="bottom-actions" id="bottomActions">
+    <button class="settings-btn" id="settingsButton" onclick="showSettings()" aria-label="Einstellungen" title="Einstellungen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.2 7.2 0 0 0-1.62-.94L14.38 2.8a.49.49 0 0 0-.49-.4h-3.84a.49.49 0 0 0-.49.4l-.36 2.52c-.58.24-1.12.56-1.62.94L5.19 5.3a.5.5 0 0 0-.61.22L2.66 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.31-.08.65-.08.94s.03.63.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.52c.04.24.24.4.49.4h3.84c.25 0 .45-.16.49-.4l.36-2.52c.58-.24 1.12-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.02-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/></svg>
+    </button>
+    <div class="view-toggle-wrap">
+      <button
+        class="view-toggle-btn"
+        id="viewToggleButton"
+        onclick="toggleView()"
+        aria-label="Liste"
+        title="Liste"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2v2H4V5Zm4 0h12v2H8V5ZM4 11h2v2H4v-2Zm4 0h12v2H8v-2ZM4 17h2v2H4v-2Zm4 0h12v2H8v-2Z"/></svg>
+      </button>
+    </div>
+
+    <button
+      class="share-btn"
+      id="shareButton"
+      onclick="showQrCode()"
+      aria-label="Teilen"
+      title="Teilen"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.2 3.2 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5c0 .23.03.45.08.66L8.03 9.77a3 3 0 1 0 0 4.46l7.12 4.16c-.05.2-.08.41-.08.61A2.93 2.93 0 1 0 18 16.08Z"/>
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- Seite QR-Code -->
+
+  <div class="qr-view" id="qrView">
+    <!-- QR-Code -->
+    <div id="qrCode"></div>
+  
+  <!-- QR-Code URL-->
+    <div class="qr-url" id="qrUrlText"></div>
+
+    <!-- Navigation: Einstellungen / Home / Teilen -->
+    <div class="bottom-actions qr-nav">
+      <button class="settings-btn" onclick="showSettings()" aria-label="Einstellungen" title="Einstellungen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.2 7.2 0 0 0-1.62-.94L14.38 2.8a.49.49 0 0 0-.49-.4h-3.84a.49.49 0 0 0-.49.4l-.36 2.52c-.58.24-1.12.56-1.62.94L5.19 5.3a.5.5 0 0 0-.61.22L2.66 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.31-.08.65-.08.94s.03.63.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.52c.04.24.24.4.49.4h3.84c.25 0 .45-.16.49-.4l.36-2.52c.58-.24 1.12-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.02-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/></svg></button>
+      <button class="view-toggle-btn" onclick="showFormView()" aria-label="Startseite" title="Startseite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Z"/></svg></button>
+      <button class="share-btn" onclick="showQrCode()" aria-label="Teilen" title="Teilen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.2 3.2 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5c0 .23.03.45.08.66L8.03 9.77a3 3 0 1 0 0 4.46l7.12 4.16c-.05.2-.08.41-.08.61A2.93 2.93 0 1 0 18 16.08Z"/></svg></button>
+    </div>
+  </div>
+
+  
+<!-- Seite Einstellungen -->
+
+<div class="settings-view" id="settingsView">
+  <div class="settings-card">
+
+    <div class="settings-section">
+      <h2>Dark Mode</h2>
+      <div class="theme-row">
+        <span id="themeLabel">Hell</span>
+        <label class="theme-switch">
+          <input type="checkbox" id="darkModeToggle" onchange="setDarkMode(this.checked)">
+          <span class="theme-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Info &amp; Dank</h2>
+      <div>Danke an Hannah</div>
+    </div>
+  </div>
+
+    <div class="bottom-actions settings-nav">
+      <button class="settings-btn" onclick="showSettings()" aria-label="Einstellungen" title="Einstellungen">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.2 7.2 0 0 0-1.62-.94L14.38 2.8a.49.49 0 0 0-.49-.4h-3.84a.49.49 0 0 0-.49.4l-.36 2.52c-.58.24-1.12.56-1.62.94L5.19 5.3a.5.5 0 0 0-.61.22L2.66 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.31-.08.65-.08.94s.03.63.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.52c.04.24.24.4.49.4h3.84c.25 0 .45-.16.49-.4l.36-2.52c.58-.24 1.12-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.02-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+        </svg>
+      </button>
+
+      <button class="view-toggle-btn" onclick="showFormView()" aria-label="Startseite" title="Startseite">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Z"/>
+        </svg>
+      </button>
+
+      <button class="share-btn" onclick="showQrCode()" aria-label="Teilen" title="Teilen">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.2 3.2 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5c0 .23.03.45.08.66L8.03 9.77a3 3 0 1 0 0 4.46l7.12 4.16c-.05.2-.08.41-.08.61A2.93 2.93 0 1 0 18 16.08Z"/>
+        </svg>
+      </button>
+
+    </div>
+</div>
+
+<script src="qrcode.min.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
