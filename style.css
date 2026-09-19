@@ -375,7 +375,6 @@
   font-size: 1.2em;
 }
 
-
 /* ===== DARK MODE =============================================================================================================== */
 
 html:has(body.dark-mode) {
@@ -386,8 +385,10 @@ body.dark-mode {
     background: #323232;
     color: #e8e8e8;
 }
+
 body.dark-mode .container,
-body.dark-mode .settings-card {
+body.dark-mode .settings-card,
+body.dark-mode .qr-card {
     background: #17191a;
     color: #e8e8e8;
 }
@@ -416,8 +417,8 @@ body.dark-mode .overview-table td {
 body.dark-mode .overview-table .topic-row th {
     border-top-color: #17191a;
 }
-/* ===== ENDE DARK MODE =============================================================================================================== */
 
+/* ===== ENDE DARK MODE =============================================================================================================== */
 
 
     /* Einheitliche Navigation in Tabelle, Einstellungen und QR-Ansicht */
