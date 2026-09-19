@@ -908,8 +908,7 @@ function toggleView() {
  * ============================================================
  */
 
-const qrUrl =
-  "https://fritzreuter.github.io/Klasse4a-Englisch1";
+const qrUrl = "https://fritzreuter.github.io/Klasse4-Englisch1";
 
 let qrCodeCreated = false;
 
