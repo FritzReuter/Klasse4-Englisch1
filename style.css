@@ -347,7 +347,14 @@
   color: #103d73;
 }
 
+.project-links {
+  margin: 0;
+  padding-left: 1.5em;
+}
 
+.project-links li {
+  margin: 0.5em 0;
+}
 
     .settings-title { margin: 0.8em 0 0.5em; font-size: 1.2em; text-align: left; }
 
