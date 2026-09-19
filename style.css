@@ -334,6 +334,21 @@
   box-sizing: border-box;
 }
 
+
+.settings-section a {
+  color: #174f91;
+}
+
+.settings-section a:visited {
+  color: #174f91;
+}
+
+.settings-section a:hover {
+  color: #103d73;
+}
+
+
+
     .settings-title { margin: 0.8em 0 0.5em; font-size: 1.2em; text-align: left; }
 
     .theme-row { display: flex; justify-content: space-between; align-items: center; gap: 1em; }
@@ -416,6 +431,16 @@ body.dark-mode .overview-table td {
 
 body.dark-mode .overview-table .topic-row th {
     border-top-color: #17191a;
+}
+
+
+body.dark-mode .settings-section a,
+body.dark-mode .settings-section a:visited {
+  color: #8fc7ff;
+}
+
+body.dark-mode .settings-section a:hover {
+  color: #b9dcff;
 }
 
 /* ===== ENDE DARK MODE =============================================================================================================== */
