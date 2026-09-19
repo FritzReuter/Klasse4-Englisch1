@@ -325,6 +325,15 @@
   text-align: left;
 }
 
+.qr-card {
+  width: 100%;
+  background: #6094d0;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
     .settings-title { margin: 0.8em 0 0.5em; font-size: 1.2em; text-align: left; }
 
     .theme-row { display: flex; justify-content: space-between; align-items: center; gap: 1em; }
