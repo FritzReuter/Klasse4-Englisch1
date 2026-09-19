@@ -18,6 +18,8 @@
     h1 {
       font-size: 2em;
       color: #123f73;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
     }
 
     .container {
