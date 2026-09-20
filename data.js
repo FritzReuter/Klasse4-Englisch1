@@ -529,14 +529,11 @@ const wetter = [
   { en: "cold", de: "kalt" },
   { en: "warm", de: "warm" },
   { en: "hot", de: "heiß" },
-  { en: "thundery", de: "Gewitter" },
   { en: "changeable", de: "wechselhaft" },
   { en: "rainbow", de: "Regenbogen" },
-
   { en: "thundery", de: "gewittrig" },
   { en: "cool", de: "kühl" },
   { en: "freezing", de: "eiskalt" }
-
 ];
 
 
