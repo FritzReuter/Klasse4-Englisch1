@@ -195,15 +195,13 @@ button {
   color: #173f6b;
 }
 
-
-/* ===== MOBILE =============================================================================================================== */
-
 @media (max-width: 700px) {
 
   body {
     padding: 1em;
   }
 
+  /* Nur diese Regeln wurden für .all-options ergänzt */
   .all-options {
     width: calc(100% + 2em);
     margin-left: -1em;
@@ -243,7 +241,7 @@ button {
     padding: 0.55em 0.4em;
     overflow-wrap: anywhere;
   }
-
+        
   .top-toggle,
   .settings-nav,
   .qr-nav {
@@ -251,7 +249,8 @@ button {
   }
 }
 
-/* ===== ENDE MOBILE ========================================================================================================== */
+
+/* ==================== */
 
 
 .bottom-actions {
@@ -318,7 +317,7 @@ button {
 }
 
 .settings-btn {
-  width: 46px;
+  width: 46px; 
   height: 46px;
   min-width: 46px;
   padding: 0;
@@ -341,14 +340,14 @@ button {
   margin: auto;
   text-align: center;
 }
-
+    
 .settings-card {
   background: #6094d0;
   padding: 2em;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,.1);
 }
-
+    
 .settings-section {
   margin: 1.5em 0;
   padding: 1.2em;
@@ -443,8 +442,7 @@ button {
   transform: translateX(26px);
 }
 
-
-/* ===== Icons ================================================================================================================= */
+/* ===== Icons ================ */
 
 .key-help {
   margin-top: 1em;
@@ -466,7 +464,6 @@ button {
   font-weight: bold;
   font-size: 1.2em;
 }
-
 
 /* ===== DARK MODE =============================================================================================================== */
 
@@ -520,11 +517,10 @@ body.dark-mode .settings-section a:hover {
   color: #b9dcff;
 }
 
-/* ===== ENDE DARK MODE ========================================================================================================= */
+/* ===== ENDE DARK MODE =============================================================================================================== */
 
 
-/* ===== Einheitliche Navigation in Tabelle, Einstellungen und QR-Ansicht ====================================================== */
-
+/* Einheitliche Navigation in Tabelle, Einstellungen und QR-Ansicht */
 .top-toggle,
 .settings-nav,
 .qr-nav {
