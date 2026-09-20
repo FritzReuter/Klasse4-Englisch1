@@ -235,6 +235,11 @@
         padding: 0.55em 0.4em;
         overflow-wrap: anywhere;
       }
+        
+      .top-toggle,
+      .settings-nav,
+      .qr-nav { gap: 0.25em; }
+      }
     }
 
 
@@ -468,6 +473,4 @@ body.dark-mode .settings-section a:hover {
     .top-toggle { margin: 0 auto 2em; }
     .settings-nav { margin: 0 auto 1.5em; }
     .qr-nav { margin: 1.5em auto 0; }
-    @media (max-width: 700px) {
-      .top-toggle, .settings-nav, .qr-nav { gap: 0.25em; }
-    }
+
