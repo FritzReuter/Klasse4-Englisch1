@@ -331,13 +331,13 @@
     
     .settings-card { background: #6094d0; padding: 2em; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,.1); }
     
-    .settings-section {
-  margin: 1.5em 0;
-  padding: 1.2em;
-  background: #e0f7fa;
-  border-radius: 10px;
-  text-align: left;
-}
+  .settings-section {
+    margin: 1.5em 0;
+    padding: 1.2em;
+    background: #e0f7fa;
+    border-radius: 10px;
+    text-align: left;
+  }
 
 .qr-card {
   width: 100%;
@@ -382,13 +382,7 @@
 
 /* ===== Icons ================ */
 
-.settings-section {
-  margin: 1.5em 0;
-  padding: 1.2em;
-  background: #e0f7fa;
-  border-radius: 10px;
-  text-align: left;
-}
+
 
 .key-help {
   margin-top: 1em;
