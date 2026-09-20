@@ -25,14 +25,15 @@ const begruessung_saetze = [
   { en: "I am fine, too.", de: "Mir geht’s auch gut." },
 
   { en: "What’s your name?", de: "Wie heißt du?" },
-  { en: "My name is Hannah.", de: "Mein Name ist Hannah." },
+  { en: "My name is ...", de: "Mein Name ist ..." },
 
   { en: "What’s your mother’s name?", de: "Wie heißt deine Mutter?" },
   { en: "What’s your father’s name?", de: "Wie heißt dein Vater?" },
 
   { en: "I am fine. And you?", de: "Mir geht’s gut. Und dir?" },
 
-  { en: "Nice to meet you!", de: "Schön, dich zu sehen." }
+  { en: "Nice to meet you!", de: "Schön, dich kennenzulernen!" },
+  { en: "Nice to see you.", de: "Schön, dich zu sehen." }
 
 ];
 
