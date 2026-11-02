@@ -894,7 +894,6 @@ const topicsWords = {
   nahrung: nahrung,
   bewegung: bewegung,
   zahlen: zahlen,
-  praepositionen: praepositionen,
   gegenstaende: gegenstaende,
   koerper: koerper,
   stadt: stadt,
@@ -905,10 +904,15 @@ const topicsWords = {
   monate: monate,
   jahreszeiten: jahreszeiten,
   wetter: wetter,
-  allgemein: allgemein,
-  adjektive: adjektive,
   tiere: tiere
-
+  geld: geld,
+  london: london,
+  zootiere: zootiere,
+  usa: usa,
+  adjektive: adjektive,
+  verben: verben,
+  praepositionen: praepositionen,
+  allgemein: allgemein
 };
 
 
@@ -925,7 +929,6 @@ const topicsSentences = {
   nahrung: nahrung_saetze,
   bewegung: bewegung_saetze,
   zahlen: zahlen_saetze,
-  praepositionen: praepositionen_saetze,
   gegenstaende: gegenstaende_saetze,
   koerper: koerper_saetze,
   stadt: stadt_saetze,
@@ -936,9 +939,14 @@ const topicsSentences = {
   monate: monate_saetze,
   jahreszeiten: jahreszeiten_saetze,
   wetter: wetter_saetze,
-  allgemein: allgemein_saetze,
-  adjektive: adjektive_saetze,
   tiere: tiere_saetze
-
+  geld: geld_saetze,
+  london: london_saetze,
+  zootiere: zootiere_saetze,
+  usa: usa_saetze,
+  adjektive: adjektive_saetze,
+  verben: verben_saetze,
+  praepositionen: praepositionen_saetze,
+  allgemein: allgemein_saetze
 };
 
