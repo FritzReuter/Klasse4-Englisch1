@@ -629,6 +629,257 @@ const tiere_saetze = [
 
 ];
 
+/*
+ * ############################################################
+ * UPDATE
+ * ############################################################
+ */
+
+/*
+ * ============================================================
+ * 1. Verben
+ * ============================================================
+ */
+
+const verben = [
+  { en: "climb", de: "klettern" },
+  { en: "eat", de: "essen" },
+  { en: "drink", de: "trinken" },
+  { en: "look at", de: "ansehen" },
+  { en: "play", de: "spielen" },
+  { en: "sleep", de: "schlafen" },
+  { en: "sit", de: "sitzen" }
+];
+
+const verben_saetze = [
+  { en: "I can climb.", de: "Ich kann klettern." },
+  { en: "I eat an apple.", de: "Ich esse einen Apfel." },
+  { en: "I drink milk.", de: "Ich trinke Milch." },
+  { en: "Look at the lion.", de: "Sieh dir den Löwen an." },
+  { en: "I play with my friends.", de: "Ich spiele mit meinen Freunden." },
+  { en: "I sleep at night.", de: "Ich schlafe nachts." },
+  { en: "I sit on a chair.", de: "Ich sitze auf einem Stuhl." }
+];
+
+
+/*
+ * ============================================================
+ * 2. Britisches und amerikanisches Geld
+ * ============================================================
+ */
+
+const geld = [
+  { en: "penny (p)", de: "kleine Münze (Einzahl)" },
+  { en: "pence (p)", de: "kleine Münzen (Mehrzahl)" },
+  { en: "pounds (£)", de: "Pfund (große Münzen + Scheine)" },
+  { en: "dollar", de: "Geld in den USA" }
+];
+
+const geld_saetze = [
+  { en: "I have one penny.", de: "Ich habe einen Penny." },
+  { en: "I have ten pence.", de: "Ich habe zehn Pence." },
+  { en: "I have five pounds.", de: "Ich habe fünf Pfund." },
+  { en: "I have one dollar.", de: "Ich habe einen Dollar." }
+];
+
+
+/*
+ * ============================================================
+ * 3. Nahrung
+ * ============================================================
+ */
+
+const nahrung = [
+  { en: "honey", de: "Honig" },
+  { en: "lemon", de: "Zitrone" },
+  { en: "lettuce", de: "Salat" },
+  { en: "mushroom", de: "Pilz" },
+  { en: "sandwich", de: "Sandwich" },
+  { en: "strawberry", de: "Erdbeere" },
+  { en: "tomato", de: "Tomate" },
+  { en: "tuna", de: "Thunfisch" },
+  { en: "ham", de: "Schinken" },
+  { en: "egg", de: "Ei" },
+  { en: "milk", de: "Milch" },
+  { en: "cornflakes", de: "Cornflakes" },
+  { en: "jam", de: "Marmelade" },
+  { en: "bread", de: "Brot" },
+  { en: "orange", de: "Orange" },
+  { en: "apple", de: "Apfel" },
+  { en: "banana", de: "Banane" },
+  { en: "cheese", de: "Käse" },
+  { en: "cucumber", de: "Gurke" },
+  { en: "grapefruit", de: "Grapefruit" },
+
+  { en: "English breakfast", de: "Englisches Frühstück" },
+  { en: "mushrooms", de: "Pilze" },
+  { en: "toast", de: "Toast" },
+  { en: "fried eggs", de: "Spiegeleier" },
+  { en: "tea", de: "Tee" },
+  { en: "fried bacon", de: "gebratener Speck" },
+  { en: "baked beans", de: "Bohnen in Tomatensoße" },
+  { en: "sausages", de: "Würstchen" },
+  { en: "orange juice", de: "Orangensaft" },
+
+  { en: "with", de: "mit" },
+  { en: "without", de: "ohne" },
+
+  { en: "hamburger", de: "Hamburger" },
+  { en: "peanut butter", de: "Erdnussbutter" },
+  { en: "tomatoes", de: "Tomaten" },
+  { en: "eggs", de: "Eier" },
+  { en: "juice", de: "Saft" }
+];
+
+const nahrung_saetze = [
+  { en: "I like honey.", de: "Ich mag Honig." },
+  { en: "The lemon is yellow.", de: "Die Zitrone ist gelb." },
+  { en: "I eat lettuce.", de: "Ich esse Salat." },
+  { en: "This is a mushroom.", de: "Das ist ein Pilz." },
+  { en: "I eat a sandwich.", de: "Ich esse ein Sandwich." },
+  { en: "The strawberry is red.", de: "Die Erdbeere ist rot." },
+  { en: "This is a tomato.", de: "Das ist eine Tomate." },
+  { en: "I like tuna.", de: "Ich mag Thunfisch." },
+  { en: "I eat ham.", de: "Ich esse Schinken." },
+  { en: "This is an egg.", de: "Das ist ein Ei." },
+  { en: "I drink milk.", de: "Ich trinke Milch." },
+  { en: "I eat cornflakes.", de: "Ich esse Cornflakes." },
+  { en: "I like jam.", de: "Ich mag Marmelade." },
+  { en: "I eat bread.", de: "Ich esse Brot." },
+  { en: "The orange is sweet.", de: "Die Orange ist süß." },
+  { en: "This is an apple.", de: "Das ist ein Apfel." },
+  { en: "I eat a banana.", de: "Ich esse eine Banane." },
+  { en: "I like cheese.", de: "Ich mag Käse." },
+  { en: "The cucumber is green.", de: "Die Gurke ist grün." },
+  { en: "This is a grapefruit.", de: "Das ist eine Grapefruit." },
+
+  { en: "I like English breakfast.", de: "Ich mag englisches Frühstück." },
+  { en: "I eat mushrooms.", de: "Ich esse Pilze." },
+  { en: "I eat toast.", de: "Ich esse Toast." },
+  { en: "I like fried eggs.", de: "Ich mag Spiegeleier." },
+  { en: "I drink tea.", de: "Ich trinke Tee." },
+  { en: "I eat fried bacon.", de: "Ich esse gebratenen Speck." },
+  { en: "I like baked beans.", de: "Ich mag Bohnen in Tomatensoße." },
+  { en: "I eat sausages.", de: "Ich esse Würstchen." },
+  { en: "I drink orange juice.", de: "Ich trinke Orangensaft." },
+
+  { en: "Tea with milk.", de: "Tee mit Milch." },
+  { en: "Tea without milk.", de: "Tee ohne Milch." },
+
+  { en: "I eat a hamburger.", de: "Ich esse einen Hamburger." },
+  { en: "I like peanut butter.", de: "Ich mag Erdnussbutter." },
+  { en: "The tomatoes are red.", de: "Die Tomaten sind rot." },
+  { en: "I eat two eggs.", de: "Ich esse zwei Eier." },
+  { en: "I drink juice.", de: "Ich trinke Saft." }
+];
+
+
+/*
+ * ============================================================
+ * 4. London und Sehenswürdigkeiten
+ * ============================================================
+ */
+
+const london = [
+  { en: "London", de: "London" },
+  { en: "Big Ben", de: "Uhrenturm" },
+  { en: "London Eye", de: "Riesenrad" },
+  { en: "Tower Bridge", de: "Brücke mit 2 Türmen" },
+  { en: "Buckingham Palace", de: "Palast des Königs" },
+  { en: "London Zoo", de: "Zoo" },
+  { en: "Victoria Station", de: "Bahnhof" },
+  { en: "sights", de: "Sehenswürdigkeiten" }
+];
+
+const london_saetze = [
+  { en: "London is big.", de: "London ist groß." },
+  { en: "This is Big Ben.", de: "Das ist Big Ben." },
+  { en: "The London Eye is big.", de: "Das London Eye ist groß." },
+  { en: "This is Tower Bridge.", de: "Das ist die Tower Bridge." },
+  { en: "This is Buckingham Palace.", de: "Das ist der Buckingham-Palast." },
+  { en: "I like London Zoo.", de: "Ich mag den Londoner Zoo." },
+  { en: "This is Victoria Station.", de: "Das ist der Bahnhof Victoria Station." },
+  { en: "London has many sights.", de: "London hat viele Sehenswürdigkeiten." }
+];
+
+
+/*
+ * ============================================================
+ * 5. Zootiere
+ * ============================================================
+ */
+
+const zootiere = [
+  { en: "snake", de: "Schlange" },
+  { en: "monkey", de: "Affe" },
+  { en: "parrot", de: "Papagei" },
+  { en: "lion", de: "Löwe" },
+  { en: "bear", de: "Bär" },
+  { en: "crocodile", de: "Krokodil" },
+  { en: "rat", de: "Ratte" }
+];
+
+const zootiere_saetze = [
+  { en: "This is a snake.", de: "Das ist eine Schlange." },
+  { en: "The monkey is funny.", de: "Der Affe ist lustig." },
+  { en: "The parrot is big.", de: "Der Papagei ist groß." },
+  { en: "The lion is dangerous.", de: "Der Löwe ist gefährlich." },
+  { en: "The bear is big.", de: "Der Bär ist groß." },
+  { en: "The crocodile is green.", de: "Das Krokodil ist grün." },
+  { en: "The rat is small.", de: "Die Ratte ist klein." }
+];
+
+
+/*
+ * ============================================================
+ * 6. USA
+ * ============================================================
+ */
+
+const usa = [
+  { en: "USA", de: "USA" },
+  { en: "flag", de: "Flagge" },
+  { en: "cap", de: "Kappe" },
+  { en: "picnic basket", de: "Picknickkorb" }
+];
+
+const usa_saetze = [
+  { en: "I live in the USA.", de: "Ich lebe in den USA." },
+  { en: "This is a flag.", de: "Das ist eine Flagge." },
+  { en: "I have a cap.", de: "Ich habe eine Kappe." },
+  { en: "This is my picnic basket.", de: "Das ist mein Picknickkorb." }
+];
+
+
+/*
+ * ============================================================
+ * 7. Adjektive
+ * ============================================================
+ */
+
+const adjektive = [
+  { en: "happy", de: "glücklich" },
+  { en: "big", de: "groß" },
+  { en: "small", de: "klein" },
+  { en: "dangerous", de: "gefährlich" },
+  { en: "funny", de: "lustig" },
+  { en: "slow", de: "langsam" },
+  { en: "fast", de: "schnell" }
+];
+
+const adjektive_saetze = [
+  { en: "I am happy.", de: "Ich bin glücklich." },
+  { en: "The bear is big.", de: "Der Bär ist groß." },
+  { en: "The rat is small.", de: "Die Ratte ist klein." },
+  { en: "The lion is dangerous.", de: "Der Löwe ist gefährlich." },
+  { en: "The monkey is funny.", de: "Der Affe ist lustig." },
+  { en: "The turtle is slow.", de: "Die Schildkröte ist langsam." },
+  { en: "The car is fast.", de: "Das Auto ist schnell." }
+];
+
+
+
+
 
 /*
  * ============================================================
